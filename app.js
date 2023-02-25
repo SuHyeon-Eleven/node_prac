@@ -19,7 +19,7 @@ app.use("/api", [goodsRouter, cartsRouter])
 
 //  /api가 추가된 경로는 goodsRouter로 가라는 의미
 
-app.post("/", (req,res)=>{
+app.post("/", (req, res) => {
     console.log(req.body)
 
     res.send("기본 uri에 POST 메소드가 정상적으로 실행되었습니다.")
@@ -31,13 +31,11 @@ app.get('/', (req, res) => {
     res.send('정상적으로 반환되었습니다.')
 });
 
-app.get('/:id', (req,res)=>{
+app.get('/:id', (req, res) => {
     console.log(req.params)
 
     res.send(":id URI에 정상적으로 반환되었습니다.")
 })
-
-
 
 
 app.listen(port, () => {

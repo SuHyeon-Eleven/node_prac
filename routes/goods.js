@@ -73,14 +73,14 @@ router.put("/goods/:goodsId/cart", async (req, res) => {
     res.status(200).json({ success: true })
 })
 
-router.delete('/goods/:goodsId/cart', async(req, res)=>{
-    const {goodsId} = req.params
+router.delete('/goods/:goodsId/cart', async (req, res) => {
+    const { goodsId } = req.params
 
-    const existsCarts = await Cart.find({goodsId})
-    if(existsCarts.length){
-        await Cart.deleteOne({goodsId})
+    const existsCarts = await Cart.find({ goodsId })
+    if (existsCarts.length) {
+        await Cart.deleteOne({ goodsId })
     }
 
-    res.json({result:"success"})
+    res.json({ result: "success" })
 })
 module.exports = router
