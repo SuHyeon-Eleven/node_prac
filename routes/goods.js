@@ -22,8 +22,8 @@ router.post("/goods", async (req, res) => {
 });
 
 //상품 목록 조회 API
-router.get("/goods", (req, res) => {
-    const goods = Goods.find({})
+router.get("/goods", async (req, res) => {
+    const goods =  await Goods.find({})
     res.status(200).json({ goods });
 });
 
